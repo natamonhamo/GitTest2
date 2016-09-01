@@ -42,5 +42,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
         android:textSize="20dp"
-        android:onClick="BackMethod" />
+        android:onClick="BackMethod"
+        android:nestedScrollingEnabled="true" />
 </RelativeLayout>

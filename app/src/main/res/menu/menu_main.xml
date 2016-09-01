@@ -23,5 +23,6 @@
         android:orderInCategory="103"
         android:title="@string/action_imagechange"
         android:icon="@mipmap/ic_launcher"
+        android:onClick="changeImage"
         app:showAsAction="never" />
 </menu>

@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imageView;
     private boolean flag = true;
     public final static String EXTRA_MESSAGE = "com.egco428.MESSAGE";
+    int num = 1;
 
     public void sendMethod(MenuItem item){
         Intent intent = new Intent(this,DisplayMessageActivity.class);
@@ -44,10 +46,33 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
+    public void changeImage(MenuItem item){
+        imageView = (ImageView) findViewById(R.id.imageView);
+
+        if (num == 1){
+            imageView.setImageResource(R.drawable.android1);
+            num = 0;
+        }
+        else{
+            imageView.setImageResource(R.drawable.android2);
+            num = 1;
+        }
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        MenuItem item = menu.add(Menu.NONE, Menu.NONE, 104, "New Toast");
+        item.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        item.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                Toast.makeText(MainActivity.this,"new message here",Toast.LENGTH_LONG).show();
+                return false;
+            }
+        });
         return true;
     }
 
@@ -62,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
