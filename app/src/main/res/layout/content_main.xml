@@ -13,7 +13,29 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Main Layout"
+        android:id="@+id/textView"
+        android:textSize="30dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center_horizontal" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:id="@+id/imageView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/overwatch_icon" />
+
+    <EditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Heroes nerver die!" />
+        android:id="@+id/editText"
+        android:gravity="center_horizontal"
+        android:textSize="30dp"
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
